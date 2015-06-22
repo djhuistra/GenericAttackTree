@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AT" nsURI="http://at/1.0" nsPrefix="at">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AT" nsURI="AT" nsPrefix="AT">
   <eClassifiers xsi:type="ecore:EClass" name="ATNode">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -17,8 +17,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="DomainID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ATType">
-    <eLiterals name="AND"/>
-    <eLiterals name="OR" value="1"/>
+    <eLiterals name="Default" value="4"/>
     <eLiterals name="SAND" value="2"/>
+    <eLiterals name="OR" value="1"/>
+    <eLiterals name="SOR" value="3"/>
+    <eLiterals name="AND"/>
   </eClassifiers>
 </ecore:EPackage>

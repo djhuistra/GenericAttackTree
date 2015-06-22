@@ -1,4 +1,4 @@
-@namespace(uri="http://at/1.0", prefix="at")
+@namespace(uri="AT", prefix="AT")
 package AT;
 
 class ATNode {

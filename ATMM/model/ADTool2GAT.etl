@@ -1,0 +1,66 @@
+pre {
+  "Running ETL".println();
+}
+
+post {
+  "Done".println();
+}
+
+rule ADTool2GAT 
+	transform r : ADTool!t_node
+	to f : AT!ATNode {
+	
+	guard : (r.parentNode.tagName.equals("adtree"))
+	
+
+
+	
+	"Detected ADTree node".println();
+
+	r.e_label.text.println();
+	
+	var children = r.c_node;
+	
+	f.Name = r.e_label.text;
+	f.Type = r.findType();
+
+	if(children.size()>0){
+ 		for(c in children){
+ 		"Test".println();
+  		f.Children.add(c.handleChildren());
+ 		}
+	}
+	f.countChildren(r.c_node);
+}
+
+
+operation Any countChildren(c : Collection) {
+	c.size().println();
+}
+
+operation ADTool!t_node findType(){
+	if(self.a_refinement.equals("disjunctive")){
+		return (AT!ATType#OR);
+	} else {
+		return (AT!ATType#AND);
+	}
+	
+}
+
+operation ADTool!t_node handleChildren() : AT!ATNode{
+var children = self.c_node;
+var result = new AT!ATNode();
+
+result.Name = self.e_label.text;
+result.Type = self.findType();
+ 
+if(children.size()>0){
+ for(c in children){
+
+  result.Children.add(c.handleChildren());
+ }
+}
+
+return result;
+}
+

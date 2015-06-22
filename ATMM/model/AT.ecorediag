@@ -67,17 +67,25 @@
   <children xmi:type="notation:Node" xmi:id="_J92IYBjCEeWbI4R0Etywjw" type="1005">
     <children xmi:type="notation:Node" xmi:id="_J93WgBjCEeWbI4R0Etywjw" type="4010"/>
     <children xmi:type="notation:Node" xmi:id="_J93WgRjCEeWbI4R0Etywjw" type="5008">
-      <children xmi:type="notation:Node" xmi:id="_LtPpcBjCEeWbI4R0Etywjw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/AND"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_LtPpcRjCEeWbI4R0Etywjw"/>
+      <children xmi:type="notation:Node" xmi:id="_I4LK4BjwEeWSq-ZfUbx1mw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/Default"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_I4LK4RjwEeWSq-ZfUbx1mw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_MSPM4BjCEeWbI4R0Etywjw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/SAND"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_MSPM4RjCEeWbI4R0Etywjw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_MBh3YBjCEeWbI4R0Etywjw" type="2006">
         <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/OR"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_MBh3YRjCEeWbI4R0Etywjw"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_MSPM4BjCEeWbI4R0Etywjw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/SAND"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_MSPM4RjCEeWbI4R0Etywjw"/>
+      <children xmi:type="notation:Node" xmi:id="_RpInABjsEeWhF7NWhC_qAg" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/SOR"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RpInARjsEeWhF7NWhC_qAg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_BTeqYBjwEeWSq-ZfUbx1mw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/AND"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_BTeqYRjwEeWSq-ZfUbx1mw"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_J93WghjCEeWbI4R0Etywjw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_J93WgxjCEeWbI4R0Etywjw"/>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<adtree>
+  <node refinement="conjunctive">
+    <label>Root</label>
+    <node refinement="disjunctive">
+      <label>N_2</label>
+    </node>
+    <node refinement="disjunctive">
+      <label>N_3</label>
+    </node>
+    <node refinement="disjunctive">
+      <label>N_4</label>
+    </node>
+    <node refinement="conjunctive">
+      <label>N_5</label>
+      <node refinement="conjunctive">
+        <label>N_6</label>
+        <node refinement="disjunctive">
+          <label>N_10</label>
+        </node>
+        <node refinement="disjunctive">
+          <label>N_11</label>
+        </node>
+        <node refinement="disjunctive">
+          <label>N_12</label>
+          <node refinement="disjunctive">
+            <label>N_14</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_15</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_16</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_17</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_18</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_19</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_20</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_21</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_22</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_23</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_24</label>
+          </node>
+          <node refinement="disjunctive">
+            <label>N_25</label>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label>N_13</label>
+        </node>
+      </node>
+      <node refinement="disjunctive">
+        <label>N_7</label>
+      </node>
+      <node refinement="disjunctive">
+        <label>N_8</label>
+      </node>
+      <node refinement="disjunctive">
+        <label>N_9</label>
+      </node>
+    </node>
+  </node>
+</adtree>
