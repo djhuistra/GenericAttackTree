@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="at" nsURI="http://at/1.0" nsPrefix="at">
+  <eClassifiers xsi:type="ecore:EClass" name="ATNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//ATType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Children" upperBound="-1"
+        eType="#//ATNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Attribute" upperBound="-1"
+        eType="#//ATAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="EDataType0"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EDataType1"/>
+  <eClassifiers xsi:type="ecore:EEnum" name=""/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ATType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="baseType" value="http://www.eclipse.org/emf/2002/Ecore#EString"/>
+    </eAnnotations>
+    <eLiterals name="EEnumLiteral0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EEnum0"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ATType">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+    <eLiterals name="SAND" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ATAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DomainID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
