@@ -34,29 +34,6 @@
     <element xmi:type="ecore:EClass" href="AT.ecore#//ATNode"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bJv_Qhi4EeWbI4R0Etywjw" x="264" y="132" width="197" height="99"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_uahP4Bi5EeWbI4R0Etywjw" type="1005">
-    <children xmi:type="notation:Node" xmi:id="_uah28Bi5EeWbI4R0Etywjw" type="4010"/>
-    <children xmi:type="notation:Node" xmi:id="_uah28Ri5EeWbI4R0Etywjw" type="5008">
-      <children xmi:type="notation:Node" xmi:id="_z0LcMBi5EeWbI4R0Etywjw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType.1/AND"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_z0LcMRi5EeWbI4R0Etywjw"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_2aW0QBi5EeWbI4R0Etywjw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType.1/OR"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_2aW0QRi5EeWbI4R0Etywjw"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_3Ox60Bi5EeWbI4R0Etywjw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType.1/SAND"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_3Ox60Ri5EeWbI4R0Etywjw"/>
-      </children>
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_uah28hi5EeWbI4R0Etywjw"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_uah28xi5EeWbI4R0Etywjw"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_uah29Bi5EeWbI4R0Etywjw"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_uahP4Ri5EeWbI4R0Etywjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="AT.ecore#//ATType.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uahP4hi5EeWbI4R0Etywjw" x="564" y="132"/>
-  </children>
   <children xmi:type="notation:Node" xmi:id="_c2EFMBi6EeWbI4R0Etywjw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_c2EsQBi6EeWbI4R0Etywjw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_c2FTUBi6EeWbI4R0Etywjw" type="5001">
@@ -86,6 +63,29 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_c2EFMRi6EeWbI4R0Etywjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="AT.ecore#//ATAttribute"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c2EFMhi6EeWbI4R0Etywjw" x="48" y="132" width="153" height="99"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_J92IYBjCEeWbI4R0Etywjw" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_J93WgBjCEeWbI4R0Etywjw" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_J93WgRjCEeWbI4R0Etywjw" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_LtPpcBjCEeWbI4R0Etywjw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/AND"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LtPpcRjCEeWbI4R0Etywjw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_MBh3YBjCEeWbI4R0Etywjw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/OR"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_MBh3YRjCEeWbI4R0Etywjw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_MSPM4BjCEeWbI4R0Etywjw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="AT.ecore#//ATType/SAND"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_MSPM4RjCEeWbI4R0Etywjw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_J93WghjCEeWbI4R0Etywjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_J93WgxjCEeWbI4R0Etywjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_J93WhBjCEeWbI4R0Etywjw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_J92IYRjCEeWbI4R0Etywjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="AT.ecore#//ATType"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J92IYhjCEeWbI4R0Etywjw" x="612" y="144"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_77S0oRi2EeWbI4R0Etywjw"/>
   <element xmi:type="ecore:EPackage" href="AT.ecore#/"/>

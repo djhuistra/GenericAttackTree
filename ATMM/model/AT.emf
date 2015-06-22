@@ -1,0 +1,24 @@
+@namespace(uri="http://at/1.0", prefix="at")
+package AT;
+
+class ATNode {
+  attr String ID;
+  attr String Description;
+  attr String Name;
+  attr ATType Type;
+  ref ATNode[*] Children;
+  ref ATAttribute[*] Attribute;
+}
+
+class ATAttribute {
+  attr String Key;
+  attr EJavaObject Value;
+  attr String DomainID;
+}
+
+enum ATType {
+  AND = 0;
+  OR = 1;
+  SAND = 2;
+}
+
