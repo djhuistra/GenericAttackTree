@@ -1,5 +1,7 @@
 pre {
   "Running ETL".println();
+  
+  //Create the root node of the XML adtree
   ADTool.root = new ADTool!t_adtree;
 }
 
@@ -11,50 +13,37 @@ rule GAT2ADTool
 	transform r : AT!ATNode
 	to f : ADTool!t_node {
 	
+	//Set refinement attribute of node
 	f.a_refinement= r.findRefinement();
+	
+	// Create and add label to the current node.
 	var label = new ADTool!t_label;
 	label.text = r.Name;
 	f.appendChild(label);
 	
-  	//for (child in r.Attributes) {
-    //	f.appendChild(child);
-  	//}
-		
-	//f.appendChildren(f.Attributes); 
+	// Append all attribute nodes to the current node
+	// Invoke the lazy rule for all attributes (by using equivalent())
+	// then append all children XML nodes to the current node.
+  	for (child in r.Attributes.equivalent()) {
+    	f.appendChild(child);
+  	}
 	
-	//var attributes = f.Attributes;
-	//attributes.println();
-	
-	for (a in r.Attributes) {
-		var param = new ADTool!t_parameter;
-		a.println();
-		param.a_domainId = a.DomainID;
-		param.text = a.Value;
-		f.appendChild(param);
-	}
-	
-	ADTool.root.appendChild(f);
-	
-	if(r.Parents.size() > 0){
-	r.println();
-	r.Parents.first().println();
-	"----".println();
-		if (r.Parents.first().Role == r.Role){
-		
-		} else {
-			f.a_switchRole = "yes";
-		}
+	// If the parent ATNode has a different role, add 'switchRole' attribute to the XML node.
+	if(r.Parents.size() > 0 and r.Parents.first().Role <> r.Role ){
+		f.a_switchRole = "yes";
 	}
 
-	
+	// Append all child ATNodes to the current node in the XML
 	for (child in r.Children.equivalent()) {
     	f.appendChild(child);
   	}
+  	
+  	// Append the current node to the root (Not sure why this works, as it is called for all nodes)
+  	ADTool.root.appendChild(f);
 	
 		
 }
 
-//TODO, gebruiken we momenteel nog niet. Uittesten hoe het werkt.
 @lazy
 rule Attribute2Param
 	transform a : AT!ATAttribute
@@ -64,6 +53,7 @@ rule Attribute2Param
 	p.text = a.Value;
 }
 
+// Simply transform each domain into an XML domain and attach it to the root
 rule GATDomain2ADToolDomain 
 	transform at : AT!Domain
 	to ad : ADTool!t_domain {
@@ -79,13 +69,14 @@ rule GATDomain2ADToolDomain
 	ADTool.root.appendChild(ad); 	
 }
 
+// Find the string version of the refinement of ATNode
 operation AT!ATNode findRefinement() : String{
 	if(self.Type == AT!ATType#OR){
 		return "disjunctive";
 	} else if(self.Type == AT!ATType#AND){
 		return "conjuctive";
 	}
-
-return "default";
 	
+	return "default";	
 }
+
