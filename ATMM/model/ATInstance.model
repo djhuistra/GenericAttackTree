@@ -1,103 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:AT="AT">
-  <AT:ATNode Name="Root" Type="SAND" Children="/1 /2 /3 /4"/>
-  <AT:ATNode Name="N_2"/>
-  <AT:ATNode Name="N_3"/>
-  <AT:ATNode Name="N_4"/>
-  <AT:ATNode Name="N_5" Type="SAND" Children="/5 /22 /23 /24"/>
-  <AT:ATNode Name="N_6" Type="SAND" Children="/6 /7 /8 /21"/>
-  <AT:ATNode Name="N_10"/>
-  <AT:ATNode Name="N_11"/>
-  <AT:ATNode Name="N_12" Children="/9 /10 /11 /12 /13 /14 /15 /16 /17 /18 /19 /20"/>
-  <AT:ATNode Name="N_14"/>
-  <AT:ATNode Name="N_15"/>
-  <AT:ATNode Name="N_16"/>
-  <AT:ATNode Name="N_17"/>
-  <AT:ATNode Name="N_18"/>
-  <AT:ATNode Name="N_19"/>
-  <AT:ATNode Name="N_20"/>
-  <AT:ATNode Name="N_21"/>
-  <AT:ATNode Name="N_22"/>
-  <AT:ATNode Name="N_23"/>
-  <AT:ATNode Name="N_24"/>
-  <AT:ATNode Name="N_25"/>
-  <AT:ATNode Name="N_13"/>
-  <AT:ATNode Name="N_7"/>
-  <AT:ATNode Name="N_8"/>
-  <AT:ATNode Name="N_9"/>
-  <AT:ATNode Name="Root" Type="SAND" Children="/26 /27 /28 /29"/>
-  <AT:ATNode Name="N_2"/>
-  <AT:ATNode Name="N_3"/>
-  <AT:ATNode Name="N_4"/>
-  <AT:ATNode Name="N_5" Type="SAND" Children="/30 /47 /48 /49"/>
-  <AT:ATNode Name="N_6" Type="SAND" Children="/31 /32 /33 /46"/>
-  <AT:ATNode Name="N_10"/>
-  <AT:ATNode Name="N_11"/>
-  <AT:ATNode Name="N_12" Children="/34 /35 /36 /37 /38 /39 /40 /41 /42 /43 /44 /45"/>
-  <AT:ATNode Name="N_14"/>
-  <AT:ATNode Name="N_15"/>
-  <AT:ATNode Name="N_16"/>
-  <AT:ATNode Name="N_17"/>
-  <AT:ATNode Name="N_18"/>
-  <AT:ATNode Name="N_19"/>
-  <AT:ATNode Name="N_20"/>
-  <AT:ATNode Name="N_21"/>
-  <AT:ATNode Name="N_22"/>
-  <AT:ATNode Name="N_23"/>
-  <AT:ATNode Name="N_24"/>
-  <AT:ATNode Name="N_25"/>
-  <AT:ATNode Name="N_13"/>
-  <AT:ATNode Name="N_7"/>
-  <AT:ATNode Name="N_8"/>
-  <AT:ATNode Name="N_9"/>
-  <AT:ATNode Name="Root" Type="AND" Children="/51 /52 /53 /54"/>
-  <AT:ATNode Name="N_2"/>
-  <AT:ATNode Name="N_3"/>
-  <AT:ATNode Name="N_4"/>
-  <AT:ATNode Name="N_5" Type="AND" Children="/55 /72 /73 /74"/>
-  <AT:ATNode Name="N_6" Type="AND" Children="/56 /57 /58 /71"/>
-  <AT:ATNode Name="N_10"/>
-  <AT:ATNode Name="N_11"/>
-  <AT:ATNode Name="N_12" Children="/59 /60 /61 /62 /63 /64 /65 /66 /67 /68 /69 /70"/>
-  <AT:ATNode Name="N_14"/>
-  <AT:ATNode Name="N_15"/>
-  <AT:ATNode Name="N_16"/>
-  <AT:ATNode Name="N_17"/>
-  <AT:ATNode Name="N_18"/>
-  <AT:ATNode Name="N_19"/>
-  <AT:ATNode Name="N_20"/>
-  <AT:ATNode Name="N_21"/>
-  <AT:ATNode Name="N_22"/>
-  <AT:ATNode Name="N_23"/>
-  <AT:ATNode Name="N_24"/>
-  <AT:ATNode Name="N_25"/>
-  <AT:ATNode Name="N_13"/>
-  <AT:ATNode Name="N_7"/>
-  <AT:ATNode Name="N_8"/>
-  <AT:ATNode Name="N_9"/>
-  <AT:ATNode Name="Root" Type="AND" Children="/76 /77 /78 /79"/>
-  <AT:ATNode Name="N_2" Type="OR"/>
-  <AT:ATNode Name="N_3" Type="OR"/>
-  <AT:ATNode Name="N_4" Type="OR"/>
-  <AT:ATNode Name="N_5" Type="AND" Children="/80 /97 /98 /99"/>
-  <AT:ATNode Name="N_6" Type="AND" Children="/81 /82 /83 /96"/>
-  <AT:ATNode Name="N_10" Type="OR"/>
-  <AT:ATNode Name="N_11" Type="OR"/>
-  <AT:ATNode Name="N_12" Type="OR" Children="/84 /85 /86 /87 /88 /89 /90 /91 /92 /93 /94 /95"/>
-  <AT:ATNode Name="N_14" Type="OR"/>
-  <AT:ATNode Name="N_15" Type="OR"/>
-  <AT:ATNode Name="N_16" Type="OR"/>
-  <AT:ATNode Name="N_17" Type="OR"/>
-  <AT:ATNode Name="N_18" Type="OR"/>
-  <AT:ATNode Name="N_19" Type="OR"/>
-  <AT:ATNode Name="N_20" Type="OR"/>
-  <AT:ATNode Name="N_21" Type="OR"/>
-  <AT:ATNode Name="N_22" Type="OR"/>
-  <AT:ATNode Name="N_23" Type="OR"/>
-  <AT:ATNode Name="N_24" Type="OR"/>
-  <AT:ATNode Name="N_25" Type="OR"/>
-  <AT:ATNode Name="N_13" Type="OR"/>
-  <AT:ATNode Name="N_7" Type="OR"/>
-  <AT:ATNode Name="N_8" Type="OR"/>
-  <AT:ATNode Name="N_9" Type="OR"/>
+  <AT:ATNode Name="Root" Type="OR" Children="/3 /6"/>
+  <AT:Domain ID="DiffLMH1" Class="lu.uni.adtool.domains.predefined.DiffLMH" Tool="ADTool"/>
+  <AT:Domain ID="SatProp2" Class="lu.uni.adtool.domains.predefined.SatProp" Tool="ADTool"/>
+  <AT:ATNode Name="N_2" Type="OR" Attributes="/4 /5"/>
+  <AT:ATAttribute Key="DiffLMH1" Value="ACED00057400014C" DomainID="DiffLMH1"/>
+  <AT:ATAttribute Key="SatProp2" Value="ACED000574000566616C7365" DomainID="SatProp2"/>
+  <AT:ATNode Name="N_3" Type="OR" Attributes="/7 /8"/>
+  <AT:ATAttribute Key="DiffLMH1" Value="ACED000574000148" DomainID="DiffLMH1"/>
+  <AT:ATAttribute Key="SatProp2" Value="ACED000574000474727565" DomainID="SatProp2"/>
+  <AT:ATNode Name="Root" Type="OR"/>
+  <AT:Domain/>
+  <AT:Domain/>
+  <AT:ATNode Name="Root" Type="OR" Children="/15 /18"/>
+  <AT:Domain ID="DiffLMH1" Class="lu.uni.adtool.domains.predefined.DiffLMH" Tool="ADTool"/>
+  <AT:Domain ID="SatProp2" Class="lu.uni.adtool.domains.predefined.SatProp" Tool="ADTool"/>
+  <AT:ATNode Name="N_2" Type="OR" Attributes="/16 /17"/>
+  <AT:ATAttribute Key="DiffLMH1" Value="ACED00057400014C" DomainID="DiffLMH1"/>
+  <AT:ATAttribute Key="SatProp2" Value="ACED000574000566616C7365" DomainID="SatProp2"/>
+  <AT:ATNode Name="N_3" Type="OR" Attributes="/19 /20"/>
+  <AT:ATAttribute Key="DiffLMH1" Value="ACED000574000148" DomainID="DiffLMH1"/>
+  <AT:ATAttribute Key="SatProp2" Value="ACED000574000474727565" DomainID="SatProp2"/>
 </xmi:XMI>

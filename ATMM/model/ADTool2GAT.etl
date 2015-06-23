@@ -27,11 +27,21 @@ rule ADTool2GAT
 	if(children.size()>0){
  		for(c in children){
  		"Test".println();
-  		f.Children.add(c.handleChildren());
+  		f.Children.add(c.handleChildren(true));
  		}
 	}
 	f.countChildren(r.c_node);
 }
+
+rule ADToolDomain2GATDomain
+	transform ad : ADTool!t_domain
+	to gad : AT!Domain {
+	
+	gad.ID = ad.a_id;
+	gad.Class = ad.e_class.text;
+	gad.Tool = ad.e_tool.text;
+	
+} 
 
 
 operation Any countChildren(c : Collection) {
@@ -47,18 +57,32 @@ operation ADTool!t_node findType(){
 	
 }
 
-operation ADTool!t_node handleChildren() : AT!ATNode{
+
+operation ADTool!t_node handleChildren(b : Boolean) : AT!ATNode{
 var children = self.c_node;
+var parameters = self.c_parameter;
 var result = new AT!ATNode();
 
 result.Name = self.e_label.text;
 result.Type = self.findType();
+
+if(("yes").equals(self.a_switchRole)){
+	b = not b;
+	b.println();
+}
  
 if(children.size()>0){
- for(c in children){
-
-  result.Children.add(c.handleChildren());
- }
+	for(c in children){
+  		result.Children.add(c.handleChildren(b));
+ 	}
+} else {
+	for(p in parameters){
+		var param = new AT!ATAttribute();
+		param.Key = p.a_domainId;
+		param.Value = p.text;
+		param.DomainID = p.a_domainId;
+		result.Attributes.add(param);
+	}
 }
 
 return result;

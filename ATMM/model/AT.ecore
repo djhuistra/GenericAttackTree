@@ -8,8 +8,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//ATType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Children" upperBound="-1"
         eType="#//ATNode"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Attribute" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Attributes" upperBound="-1"
         eType="#//ATAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Role" eType="#//ATRole"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ATAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -22,5 +23,14 @@
     <eLiterals name="OR" value="1"/>
     <eLiterals name="SOR" value="3"/>
     <eLiterals name="AND"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Domain">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tool" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ATRole">
+    <eLiterals name="Attack" value="1"/>
+    <eLiterals name="Defense"/>
   </eClassifiers>
 </ecore:EPackage>
