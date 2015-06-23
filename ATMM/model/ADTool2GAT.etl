@@ -23,11 +23,11 @@ rule ADTool2GAT
 	
 	f.Name = r.e_label.text;
 	f.Type = r.findType();
+	f.Role = AT!ATRole#Attack;
 
 	if(children.size()>0){
  		for(c in children){
- 		"Test".println();
-  		f.Children.add(c.handleChildren(true));
+  		f.Children.add(c.handleChildren(true, f));
  		}
 	}
 	f.countChildren(r.c_node);
@@ -58,7 +58,7 @@ operation ADTool!t_node findType(){
 }
 
 
-operation ADTool!t_node handleChildren(b : Boolean) : AT!ATNode{
+operation ADTool!t_node handleChildren(b : Boolean, parent : AT!ATNode) : AT!ATNode{
 var children = self.c_node;
 var parameters = self.c_parameter;
 var result = new AT!ATNode();
@@ -66,14 +66,22 @@ var result = new AT!ATNode();
 result.Name = self.e_label.text;
 result.Type = self.findType();
 
+result.Parents.add(parent);
+
+// Reverse roles if node contains switchRole attribute
 if(("yes").equals(self.a_switchRole)){
 	b = not b;
-	b.println();
+}
+
+if (b) {
+	result.Role = AT!ATRole#Attack;
+} else {
+	result.Role =  AT!ATRole#Defense;
 }
  
 if(children.size()>0){
 	for(c in children){
-  		result.Children.add(c.handleChildren(b));
+  		result.Children.add(c.handleChildren(b, result));
  	}
 } else {
 	for(p in parameters){

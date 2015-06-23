@@ -1,24 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:AT="AT">
-  <AT:ATNode Name="Root" Type="OR" Children="/3 /6"/>
-  <AT:Domain ID="DiffLMH1" Class="lu.uni.adtool.domains.predefined.DiffLMH" Tool="ADTool"/>
-  <AT:Domain ID="SatProp2" Class="lu.uni.adtool.domains.predefined.SatProp" Tool="ADTool"/>
-  <AT:ATNode Name="N_2" Type="OR" Attributes="/4 /5"/>
-  <AT:ATAttribute Key="DiffLMH1" Value="ACED00057400014C" DomainID="DiffLMH1"/>
-  <AT:ATAttribute Key="SatProp2" Value="ACED000574000566616C7365" DomainID="SatProp2"/>
-  <AT:ATNode Name="N_3" Type="OR" Attributes="/7 /8"/>
-  <AT:ATAttribute Key="DiffLMH1" Value="ACED000574000148" DomainID="DiffLMH1"/>
-  <AT:ATAttribute Key="SatProp2" Value="ACED000574000474727565" DomainID="SatProp2"/>
-  <AT:ATNode Name="Root" Type="OR"/>
-  <AT:Domain/>
-  <AT:Domain/>
-  <AT:ATNode Name="Root" Type="OR" Children="/15 /18"/>
-  <AT:Domain ID="DiffLMH1" Class="lu.uni.adtool.domains.predefined.DiffLMH" Tool="ADTool"/>
-  <AT:Domain ID="SatProp2" Class="lu.uni.adtool.domains.predefined.SatProp" Tool="ADTool"/>
-  <AT:ATNode Name="N_2" Type="OR" Attributes="/16 /17"/>
-  <AT:ATAttribute Key="DiffLMH1" Value="ACED00057400014C" DomainID="DiffLMH1"/>
-  <AT:ATAttribute Key="SatProp2" Value="ACED000574000566616C7365" DomainID="SatProp2"/>
-  <AT:ATNode Name="N_3" Type="OR" Attributes="/19 /20"/>
-  <AT:ATAttribute Key="DiffLMH1" Value="ACED000574000148" DomainID="DiffLMH1"/>
-  <AT:ATAttribute Key="SatProp2" Value="ACED000574000474727565" DomainID="SatProp2"/>
+  <AT:ATNode Name="Root" Type="AND" Children="/1 /2 /3" Role="Attack"/>
+  <AT:ATNode Name="N_2" Type="OR" Role="Attack" Parents="/0"/>
+  <AT:ATNode Name="N_3" Type="AND" Role="Attack" Parents="/0"/>
+  <AT:ATNode Name="N_5" Type="OR" Children="/4 /5" Role="Defense" Parents="/0"/>
+  <AT:ATNode Name="N_7" Type="OR" Role="Defense" Parents="/3"/>
+  <AT:ATNode Name="N_6" Type="OR" Role="Attack" Parents="/3"/>
 </xmi:XMI>

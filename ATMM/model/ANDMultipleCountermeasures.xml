@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<adtree>
+  <node refinement="conjunctive">
+    <label>Root</label>
+    <node refinement="disjunctive">
+      <label>N_2</label>
+    </node>
+    <node refinement="conjunctive">
+      <label>N_3</label>
+    </node>
+    <node refinement="disjunctive" switchRole="yes">
+      <label>N_5</label>
+      <node refinement="disjunctive">
+        <label>N_7</label>
+      </node>
+      <node refinement="disjunctive" switchRole="yes">
+        <label>N_6</label>
+      </node>
+    </node>
+  </node>
+</adtree>

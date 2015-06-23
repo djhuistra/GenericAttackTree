@@ -1,0 +1,91 @@
+pre {
+  "Running ETL".println();
+  ADTool.root = new ADTool!t_adtree;
+}
+
+post {
+  "Done".println();
+}
+
+rule GAT2ADTool 	
+	transform r : AT!ATNode
+	to f : ADTool!t_node {
+	
+	f.a_refinement= r.findRefinement();
+	var label = new ADTool!t_label;
+	label.text = r.Name;
+	f.appendChild(label);
+	
+  	//for (child in r.Attributes) {
+    //	f.appendChild(child);
+  	//}
+		
+	//f.appendChildren(f.Attributes); 
+	
+	//var attributes = f.Attributes;
+	//attributes.println();
+	
+	for (a in r.Attributes) {
+		var param = new ADTool!t_parameter;
+		a.println();
+		param.a_domainId = a.DomainID;
+		param.text = a.Value;
+		f.appendChild(param);
+	}
+	
+	ADTool.root.appendChild(f);
+	
+	if(r.Parents.size() > 0){
+	r.println();
+	r.Parents.first().println();
+	"----".println();
+		if (r.Parents.first().Role == r.Role){
+		
+		} else {
+			f.a_switchRole = "yes";
+		}
+	}
+
+	
+	for (child in r.Children.equivalent()) {
+    	f.appendChild(child);
+  	}
+	
+		
+}
+
+//TODO, gebruiken we momenteel nog niet. Uittesten hoe het werkt.
+@lazy
+rule Attribute2Param
+	transform a : AT!ATAttribute
+	to p : ADTool!t_parameter{
+	
+	p.a_domainId = a.DomainID;
+	p.text = a.Value;
+}
+
+rule GATDomain2ADToolDomain 
+	transform at : AT!Domain
+	to ad : ADTool!t_domain {
+	
+	var class = new ADTool!t_class;
+	class.text = at.Class;
+	var tool = new ADTool!t_tool;
+	tool.text = at.Tool;
+	ad.a_id = at.ID; 
+	
+	ad.appendChild(class);
+	ad.appendChild(tool);
+	ADTool.root.appendChild(ad); 	
+}
+
+operation AT!ATNode findRefinement() : String{
+	if(self.Type == AT!ATType#OR){
+		return "disjunctive";
+	} else if(self.Type == AT!ATType#AND){
+		return "conjuctive";
+	}
+
+return "default";
+	
+}

@@ -11,6 +11,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Attributes" upperBound="-1"
         eType="#//ATAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Role" eType="#//ATRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Parents" upperBound="-1"
+        eType="#//ATNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ATAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -30,6 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tool" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ATRole">
+    <eLiterals name="Default" value="2"/>
     <eLiterals name="Attack" value="1"/>
     <eLiterals name="Defense"/>
   </eClassifiers>
