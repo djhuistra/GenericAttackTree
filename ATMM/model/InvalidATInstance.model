@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:AT="AT">
+  <AT:ATNode Name="Root" Type="OR" Children="/1 /4" Role="Attack"/>
+  <AT:ATNode Name="N_2" Type="OR" Attributes="/2 /3" Role="Defense" Parents="/0 /1"/>
+  <AT:ATAttribute Key="DiffLMH1" Value="ACED00057400014C" DomainID="DiffLMH1"/>
+  <AT:ATAttribute Key="SatProp2" Value="ACED000574000566616C7365" DomainID="SatProp2"/>
+  <AT:ATNode Name="N_3" Type="OR" Attributes="/5 /6" Role="Defense" Parents="/0"/>
+  <AT:ATAttribute Key="DiffLMH1" Value="ACED000574000148" DomainID="DiffLMH1"/>
+  <AT:ATAttribute Key="UnexistingDomain" Value="ACED000574000474727565" DomainID="UnexistingDomain"/>
+  <AT:Domain ID="DiffLMH1" Class="lu.uni.adtool.domains.predefined.DiffLMH" Tool="ADTool"/>
+  <AT:Domain ID="SatProp2" Class="lu.uni.adtool.domains.predefined.SatProp" Tool="ADTool"/>
+  <AT:ATNode Name="Root2" Type="OR" Attributes="/2" Role="Attack"/>
+</xmi:XMI>

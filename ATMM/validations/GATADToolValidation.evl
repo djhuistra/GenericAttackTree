@@ -1,0 +1,72 @@
+
+context AT!ATNode {
+
+	// Only 1 child with different ATType allowed
+	constraint MaxOneChildWithDifferentType {
+	
+		// valid when <2
+		check : self.Children.select(c|c.Role<>self.Role).size()<2
+		
+		message : "Node " + self.Name + " with Role "+self.Role.name+" has mutliple childeren with different Role"
+
+	}
+	
+	constraint MultipleParents {
+	
+		check : self.Parents.size() < 2
+			
+		message : "Node " + self.Name + " has more then one parent"
+	}
+	
+	constraint NotItselfAsParentOrChild {
+	
+		check : self.Children.forAll(c|c<>self)
+			and self.Parents.forAll(c|c<>self)
+			
+		message : "Node " + self.Name + " has itself as parent or child "+self
+	}
+	
+	//TODO: Zorg dat het maar 1 keer word uitgevoerd. Nog geen goede oplossing voor kunnen vinden.
+	constraint OneAndOnlyOneChildWithoutParents {
+	
+		check :  AT!ATNode.allInstances.select(n|n.Parents.size() == 0).size() = 1
+
+	}
+	
+
+	
+}
+
+context AT!ATAttribute{
+
+	constraint EveryLeafMustHaveAttribute {
+	
+		check {
+			var leafNodes = AT!ATNode.allInstances.select(n|n.Children.size() == 0);
+			return leafNodes.forAll(l|l.Attributes.exists(a|a.DomainID == self.DomainID)); 
+		}
+		
+		message : "Not every leaf has attribute "+self.DomainID
+	}
+	
+	constraint DomainMustExist{
+	
+		check : AT!Domain.allInstances.exists(d|d.ID == self.DomainID)
+		
+		message : "There does not exist domain for attribute: "+self
+	}
+}
+
+
+/*
+context AT{
+
+	constraint OneAndOnlyOneChildWithoutParents {
+	
+		check :  AT!ATNode.allInstances.select(n|n.Parents.size() == 0) = 0
+		
+	}
+
+}
+
+*/
