@@ -7,6 +7,7 @@ pre {
   
   	var domain2type : Map;
   	var domain2initValue : Map;
+  	var domain2details : Map;
   	initDomainInformation();
 
   	var definitions : Sequence;
@@ -21,11 +22,12 @@ rule registerLeaves
 	transform r : AT!ATNode
 	to f : UPPAAL!t_node {
 	
-	guard : (r.Children.size() == 0)
+	r.Name = r.Name.replaceAll("\\s+","_");
+	if (r.Children.size() == 0) {
 	
-	ElementId2LeafId.put(r.Name, ElementId2LeafId.size());
-	LeafId2ElementId.put(LeafId2ElementId.size(), r.Name);
-
+		ElementId2LeafId.put(r.Name, ElementId2LeafId.size());
+		LeafId2ElementId.put(LeafId2ElementId.size(), r.Name);
+	}
 }
 
 // Rule for the Leaves
@@ -94,17 +96,16 @@ rule ATAND
 }
 
 post {
-
-
-
-
-  UPPAAL.root = new UPPAAL!t_nta;
-  UPPAAL.root.appendChild(getDeclaration());
-  UPPAAL.root.appendChild(getBETemplate());
-  UPPAAL.root.appendChild(getORTemplate(2));
-  UPPAAL.root.appendChild(getAND2Template());
-  UPPAAL.root.appendChild(getSystemTag());
-  "Done".println();
+  	UPPAAL.root = new UPPAAL!t_nta;
+  	UPPAAL.root.appendChild(getDeclaration());
+  	UPPAAL.root.appendChild(getBETemplate());
+  	UPPAAL.root.appendChild(getORTemplate(2));
+  	UPPAAL.root.appendChild(getORTemplate(4));
+  	UPPAAL.root.appendChild(getAND2Template());
+  	UPPAAL.root.appendChild(getAND3Template());
+ 	getAND4Template();
+  	UPPAAL.root.appendChild(getSystemTag());
+ 	"Done".println();
 }
 
 // Return the Declaration tag
@@ -263,6 +264,57 @@ operation Any getAND2Template() : UPPAAL!t_template{
 	return template;	
 }
 
+// Return the AND3-template
+operation Any getAND3Template() : UPPAAL!t_template{
+	var template = new UPPAAL!t_template;
+	
+	var name = new UPPAAL!t_name;
+	name.text = "AND3";
+	var parameter = new UPPAAL!t_parameter;
+	parameter.text = "broadcast chan &a, broadcast chan &b, broadcast chan &c, broadcast chan &d";
+
+	template.appendChild(name);
+	template.appendChild(parameter);
+	
+	template.appendChild(getLocation("id0", "", "0", "0", false, ""));
+	template.appendChild(getLocation("id1", "", "100", "-200", false, ""));
+	template.appendChild(getLocation("id2", "", "100", "0", false, ""));
+	template.appendChild(getLocation("id3", "", "100", "200", false, ""));
+	template.appendChild(getLocation("id4", "", "200", "-200", false, ""));
+	template.appendChild(getLocation("id5", "", "200", "0", false, ""));
+	template.appendChild(getLocation("id6", "", "200", "200", false, ""));
+	template.appendChild(getLocation("id7", "", "300", "0", true, ""));
+	template.appendChild(getLocation("id8", "end", "400", "0", false, ""));
+	
+	var init = new UPPAAL!t_init;
+	init.a_ref = "id0";
+	template.appendChild(init);
+	
+	template.appendChild(getTransition("id0", "id1", "", "b?", "", "", new Collection));
+	template.appendChild(getTransition("id0", "id2", "", "c?", "", "", new Collection));
+	template.appendChild(getTransition("id0", "id3", "", "d?", "", "", new Collection));
+	
+	template.appendChild(getTransition("id1", "id5", "", "c?", "", "", new Collection));
+	template.appendChild(getTransition("id2", "id6", "", "d?", "", "", new Collection));
+	template.appendChild(getTransition("id3", "id4", "", "b?", "", "", new Collection));
+	template.appendChild(getTransition("id1", "id4", "", "d?", "", "", new Collection));
+	template.appendChild(getTransition("id2", "id5", "", "b?", "", "", new Collection));
+	template.appendChild(getTransition("id3", "id6", "", "c?", "", "", new Collection));	
+	
+	template.appendChild(getTransition("id4", "id7", "", "c?", "", "", new Collection));
+	template.appendChild(getTransition("id5", "id7", "", "d?", "", "", new Collection));
+	template.appendChild(getTransition("id6", "id7", "", "b?", "", "", new Collection));
+	
+	template.appendChild(getTransition("id7", "id8", "", "a!", "", "", new Collection));
+	
+	return template;	
+}
+
+// Return the AND4-template
+operation Any getAND4Template() : UPPAAL!t_template{
+	
+}
+
 // Returns a location tag
 operation Any getLocation(id : String, name : String, x : String, y : String, urgent : Boolean, exp : String) : UPPAAL!t_location{
 	var location = new UPPAAL!t_location;
@@ -374,25 +426,25 @@ operation Any initDomainInformation() {
   	domain2initValue.put("MinTimePar",0.0);
   	domain2initValue.put("MinTimeSeq",0.0);
   	domain2initValue.put("PowerCons",0.0);
-  	domain2initValue.put("ProbSucc",0.0);
+  	domain2initValue.put("ProbSucc",1.0);
   	domain2initValue.put("ReachPar",0.0);
   	domain2initValue.put("ReachSeq",0.0);
   	domain2initValue.put("SatOpp","false");
   	domain2initValue.put("SatProp","false");
   	domain2initValue.put("SatScenario","false");
   	
-  	domain2initValue.put("DiffLMH","scale");
-  	domain2initValue.put("DiffLMHE","scale");
-  	domain2initValue.put("MinCost","addition");
-  	domain2initValue.put("MinSkill","addition");
-  	domain2initValue.put("MinTimePar","min_value");
-  	domain2initValue.put("MinTimeSeq","addition");
-  	domain2initValue.put("PowerCons",0.0);
-  	domain2initValue.put("ProbSucc","probability");
-  	domain2initValue.put("ReachPar",0.0);
-  	domain2initValue.put("ReachSeq",0.0);
-  	domain2initValue.put("SatOpp","satisfiability");
-  	domain2initValue.put("SatProp","satisfiability");
-  	domain2initValue.put("SatScenario","satisfiability");
+  	domain2details.put("DiffLMH","scale");
+  	domain2details.put("DiffLMHE","scale");
+  	domain2details.put("MinCost","addition");
+  	domain2details.put("MinSkill","addition");
+  	domain2details.put("MinTimePar","min_value");
+  	domain2details.put("MinTimeSeq","addition");
+  	domain2details.put("PowerCons",0.0);
+  	domain2details.put("ProbSucc","probability");
+  	domain2details.put("ReachPar",0.0);
+  	domain2details.put("ReachSeq",0.0);
+  	domain2details.put("SatOpp","satisfiability");
+  	domain2details.put("SatProp","satisfiability");
+  	domain2details.put("SatScenario","satisfiability");
   	
 }

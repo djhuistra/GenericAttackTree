@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><adtree>
-  <node refinement="conjunctive">
+  <node refinement="disjunctive">
     <label>Auction Fraud</label>
     <node refinement="conjunctive">
       <label>Preparation Phase</label>
