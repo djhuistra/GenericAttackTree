@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><adtree>
+  <node refinement="conjunctive">
+    <label>Auction Fraud</label>
+    <node refinement="conjunctive">
+      <label>Preparation Phase</label>
+      <node refinement="disjunctive">
+        <label>Ask Vera about Sam</label>
+        <parameter domainId="ProbSucc1">0.25</parameter>
+      </node>
+      <node refinement="conjunctive">
+        <label>Shop at Sam</label>
+        <node refinement="disjunctive">
+          <label>Acquire Malware</label>
+          <parameter domainId="ProbSucc1">0.5</parameter>
+        </node>
+        <node refinement="disjunctive">
+          <label>Acquire Emails</label>
+          <parameter domainId="ProbSucc1">0.5</parameter>
+        </node>
+        <node refinement="disjunctive">
+          <label>Acquire Chris CC</label>
+          <parameter domainId="ProbSucc1">0.55</parameter>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>Send Emails</label>
+        <node refinement="conjunctive">
+          <label>Job Offer</label>
+          <node refinement="disjunctive">
+            <label>Rachel Accepts Job</label>
+            <parameter domainId="ProbSucc1">1.0</parameter>
+          </node>
+          <node refinement="disjunctive">
+            <label>Send Job Ad to Emails</label>
+            <parameter domainId="ProbSucc1">0.68</parameter>
+          </node>
+        </node>
+        <node refinement="conjunctive">
+          <label>Malware Distribution</label>
+          <node refinement="disjunctive">
+            <label>Tino Opens Attachment</label>
+            <parameter domainId="ProbSucc1">0.75</parameter>
+          </node>
+          <node refinement="disjunctive">
+            <label>Send Malware to Emails</label>
+            <parameter domainId="ProbSucc1">1.0</parameter>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node refinement="conjunctive">
+      <label>Buy from Alice</label>
+      <node refinement="disjunctive">
+        <label>Credentials from Tina</label>
+        <parameter domainId="ProbSucc1">0.75</parameter>
+      </node>
+      <node refinement="disjunctive">
+        <label>Purchase Goods</label>
+        <parameter domainId="ProbSucc1">0.75</parameter>
+      </node>
+      <node refinement="disjunctive">
+        <label>Pay with Chris CC</label>
+        <parameter domainId="ProbSucc1">0.75</parameter>
+      </node>
+    </node>
+    <node refinement="conjunctive">
+      <label>Delivery Process</label>
+      <node refinement="disjunctive">
+        <label>Max to Rachel</label>
+        <parameter domainId="ProbSucc1">0.75</parameter>
+      </node>
+      <node refinement="disjunctive">
+        <label>Rachel to Dave</label>
+        <parameter domainId="ProbSucc1">0.75</parameter>
+      </node>
+      <node refinement="disjunctive">
+        <label>Otto from Dave</label>
+        <parameter domainId="ProbSucc1">1.0</parameter>
+      </node>
+    </node>
+    <node refinement="disjunctive">
+      <label>Otto sells to Perry</label>
+      <parameter domainId="ProbSucc1">0.75</parameter>
+    </node>
+  </node>
+  <domain id="ProbSucc1">
+    <class>lu.uni.adtool.domains.predefined.ProbSucc</class>
+    <tool>ADTool</tool>
+  </domain>
+</adtree>

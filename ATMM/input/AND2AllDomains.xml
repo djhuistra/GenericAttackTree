@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><adtree>
+  <node refinement="conjunctive">
+    <label>Root</label>
+    <node refinement="disjunctive">
+      <label>N_2</label>
+      <parameter domainId="DiffLMH1">H</parameter>
+      <parameter domainId="DiffLMHE2">L</parameter>
+      <parameter domainId="MinCost3">20.0</parameter>
+      <parameter domainId="MinSkill4">20</parameter>
+      <parameter domainId="MinTimePar5">8.0</parameter>
+      <parameter domainId="MinTimeSeq6">10.0</parameter>
+      <parameter domainId="PowerCons7">15.0</parameter>
+      <parameter domainId="ProbSucc8">0.5</parameter>
+      <parameter domainId="ReachPar9">10</parameter>
+      <parameter domainId="ReachSeq10">20</parameter>
+      <parameter domainId="SatOpp11">true</parameter>
+      <parameter domainId="SatProp12">true</parameter>
+      <parameter domainId="SatScenario13">false</parameter>
+    </node>
+    <node refinement="disjunctive">
+      <label>N_3</label>
+      <parameter domainId="DiffLMH1">H</parameter>
+      <parameter domainId="DiffLMHE2">H</parameter>
+      <parameter domainId="MinCost3">10.0</parameter>
+      <parameter domainId="MinSkill4">30</parameter>
+      <parameter domainId="MinTimePar5">10.0</parameter>
+      <parameter domainId="MinTimeSeq6">8.0</parameter>
+      <parameter domainId="PowerCons7">40.0</parameter>
+      <parameter domainId="ProbSucc8">0.5</parameter>
+      <parameter domainId="ReachPar9">8</parameter>
+      <parameter domainId="ReachSeq10">20</parameter>
+      <parameter domainId="SatOpp11">true</parameter>
+      <parameter domainId="SatProp12">true</parameter>
+      <parameter domainId="SatScenario13">true</parameter>
+    </node>
+  </node>
+  <domain id="DiffLMH1">
+    <class>lu.uni.adtool.domains.predefined.DiffLMH</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="DiffLMHE2">
+    <class>lu.uni.adtool.domains.predefined.DiffLMHE</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="MinCost3">
+    <class>lu.uni.adtool.domains.predefined.MinCost</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="MinSkill4">
+    <class>lu.uni.adtool.domains.predefined.MinSkill</class>
+    <range>40</range>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="MinTimePar5">
+    <class>lu.uni.adtool.domains.predefined.MinTimePar</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="MinTimeSeq6">
+    <class>lu.uni.adtool.domains.predefined.MinTimeSeq</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="PowerCons7">
+    <class>lu.uni.adtool.domains.predefined.PowerCons</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="ProbSucc8">
+    <class>lu.uni.adtool.domains.predefined.ProbSucc</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="ReachPar9">
+    <class>lu.uni.adtool.domains.predefined.ReachPar</class>
+    <range>10</range>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="ReachSeq10">
+    <class>lu.uni.adtool.domains.predefined.ReachSeq</class>
+    <range>20</range>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="SatOpp11">
+    <class>lu.uni.adtool.domains.predefined.SatOpp</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="SatProp12">
+    <class>lu.uni.adtool.domains.predefined.SatProp</class>
+    <tool>ADTool</tool>
+  </domain>
+  <domain id="SatScenario13">
+    <class>lu.uni.adtool.domains.predefined.SatScenario</class>
+    <tool>ADTool</tool>
+  </domain>
+</adtree>
